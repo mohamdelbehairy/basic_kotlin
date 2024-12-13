@@ -1,9 +1,11 @@
-fun main() {
-    print("Enter your name: ")
-    val name = readlnOrNull()
-    println("Your name is $name.")
+import java.util.Calendar
 
-    print("Enter your age: ")
-    val age = readlnOrNull()!!.toInt()
-    println("Your age is $age.")
+fun main() {
+    print("Enter your birth year: ")
+
+    val birthYear = readln().toInt()
+
+    val age = Calendar.getInstance().get(Calendar.YEAR) - birthYear
+
+    println("Your age is $age years ago.")
 }
