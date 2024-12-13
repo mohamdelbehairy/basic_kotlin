@@ -1,15 +1,10 @@
 fun main() {
-    // val => value can't update
-    // var => value can update
-    println("Hello World!")
+    val name = "Mohamed Elbehairy"
+    println(name)
+    println(name[0])
 
-    val x = 5
-    val y = 10
-    val z = 10.5
-    val d = '^'
-
-    println(x)
-    println(y)
-    println(z)
-    println(d)
+    val bool = true
+    println(bool)
+    val check = 2 > 5
+    println(check)
 }
