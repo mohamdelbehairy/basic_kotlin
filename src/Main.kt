@@ -1,29 +1,13 @@
 fun main() {
-    print("Enter any number: ")
-    val x = readln().toInt()
+    print("Enter number1: ")
+    val num1 = readln().toInt()
 
-    when(x) {
-        0-> {
-            println("x is 0.")
-        }
-        1-> {
-            println("x is 1.")
-        }
-        else-> {
-            println("unknown!")
-        }
-    }
+    print("Enter number2: ")
+    val num2 = readln().toInt()
 
-    print("Enter your name: ")
-    val name = readln()
-
-    when(name) {
-        "Mohamed"-> {
-            println("Accepted.")
-        }
-
-        else-> {
-            println("Only admin can login.")
-        }
-    }
+    println("sum = ${num1+num2}")
+    println("sub = ${num1-num2}")
+    println("mul = ${num1*num2}")
+    println("div = ${num1/num2}")
+    println("mod = ${num1%num2}")
 }
