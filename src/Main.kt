@@ -1,10 +1,12 @@
 fun main() {
-    val name = "Mohamed Elbehairy"
-    println(name)
-    println(name[0])
+    // comment
 
-    val bool = true
-    println(bool)
-    val check = 2 > 5
-    println(check)
+    /*
+    more comments.
+    more comments.
+    more comments.
+    more comments.
+    more comments.
+    more comments.
+     */
 }
