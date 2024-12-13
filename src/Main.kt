@@ -1,9 +1,9 @@
 fun main() {
-    // ? make variable null
-    // !! this mean the variable must be not null
-    val x:Int? = null
-    println(x)
+    print("Enter your name: ")
+    val name = readlnOrNull()
+    println("Your name is $name.")
 
-    val y:Int? = 10
-    println(y!!)
+    print("Enter your age: ")
+    val age = readlnOrNull()!!.toInt()
+    println("Your age is $age.")
 }
