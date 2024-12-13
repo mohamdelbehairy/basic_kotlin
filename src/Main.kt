@@ -1,11 +1,9 @@
 fun main() {
+    // ? make variable null
+    // !! this mean the variable must be not null
+    val x:Int? = null
+    println(x)
 
-    /*
-    - Int, Double, Char, String, Boolean
-    - toInt(), toDouble(), toChar(), toString(), toBoolean()
-    */
-
-    val x = "100"
-    val z  = x.toInt()
-    println(z+10)
+    val y:Int? = 10
+    println(y!!)
 }
