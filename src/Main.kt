@@ -1,19 +1,49 @@
 fun main() {
-    val str = "welcome"
-    println("str1: $str")
-    println("str2: ${str.plus(" my friend")}")
-    println("str3: ${str.hashCode()}")
-    println("str4: ${str == "welcome"}") // str.equals("welcome")
-    println("str5: ${str.length}")
-    println("str6: ${str.count()}")
-    println("str7: ${str.drop(3)}") // remove first n from str
-    println("str8: ${str.take(3)}") // get first n from str
-    println("str9: ${str.removeRange(2,4)}")
-    println("str10: ${str.uppercase()}")
-    println("str11: ${str.lowercase()}")
-    println("str12: ${str.first()}")
-    println("str13: ${str.last()}")
-    println("str14: ${str.replace('w','W')}") // replace char
-    println("str15: ${str.replace("welcome","hello")}") // replace string
-    println("str16: ${str.replace("come","l")}")
+    print("Enter your degree: ")
+    val degree = readln().toInt()
+
+//    if (degree >= 90) println("A")
+//    else if (degree in 80..89) println("B")
+//    else if(degree in 70..79) println("C")
+//    else if (degree in 60..69) println("D")
+//    else if(degree in 50..59) println("E")
+//    else println("F")
+
+    when {
+        degree >= 90 -> {
+            if(degree > 94) {
+                println("A+")
+            } else {
+                println("A-")
+            }
+        }
+        degree in 80..89 ->  {
+            if(degree > 84) {
+            println("B+")
+        } else {
+            println("B-")
+        }}
+        degree in 70..79 -> {
+            if(degree > 74) {
+                println("C+")
+            } else {
+                println("C-")
+            }
+        }
+        degree in 60..69 -> {
+            if(degree > 64) {
+                println("D+")
+            } else {
+                println("D-")
+            }
+        }
+        degree in 50..59 -> {
+            if(degree > 54) {
+                println("E+")
+            } else {
+                println("E-")
+            }
+        }
+        else -> println("F")
+    }
 }
