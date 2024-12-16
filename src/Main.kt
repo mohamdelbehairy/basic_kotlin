@@ -1,22 +1,14 @@
 fun main() {
-    var x = 1
 
-    while (x <= 10) {
-        var y = 1
-        while (y <= 10) {
-            println("$x * $y = ${x*y}")
-            y++
+
+    for (x in 1..10) {
+        for (y in 1..10) {
+            println("$x * $y = ${x * y}")
         }
-        x ++
     }
-
-    var z = 1
-    do {
-        var y = 1
-        do {
-            println("$z * $y = ${z*y}")
-            y++
-        } while (y <= 10)
-        z ++
-    } while (z <= 10)
+    //بيستخدم لعرض عناصر مصفوفه معينه
+    val x = "welcome"
+    for (i in x) {
+        println("Char: $i")
+    }
 }
