@@ -1,15 +1,22 @@
 fun main() {
-    while (true) {
-        print("Enter your degree: ")
-        val degree = readln().toInt()
+    var x = 1
 
-        if(degree !in 0..100)break
-
-        if (degree >= 90) println("A")
-        else if (degree in 80..89) println("B")
-        else if(degree in 70..79) println("C")
-        else if (degree in 60..69) println("D")
-        else if(degree in 50..59) println("E")
-        else println("F")
+    while (x <= 10) {
+        var y = 1
+        while (y <= 10) {
+            println("$x * $y = ${x*y}")
+            y++
+        }
+        x ++
     }
+
+    var z = 1
+    do {
+        var y = 1
+        do {
+            println("$z * $y = ${z*y}")
+            y++
+        } while (y <= 10)
+        z ++
+    } while (z <= 10)
 }
