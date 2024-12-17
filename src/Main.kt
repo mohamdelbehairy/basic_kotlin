@@ -1,22 +1,17 @@
 fun main() {
-    val arr = arrayOf(58,5,15,3,25,99,1,6)
-    println("arr: ${arr.toList()}")
+    val x = Array(3) {0} // immutable غير قابله للتعديل
+    val y = ArrayList<Int>() // mutable قابله للتعديل
 
-    println("max element: ${arr.max()}")
-    println("min element: ${arr.min()}")
-    println("count element: ${arr.count()}")
-    println("size element: ${arr.size}")
-    println("first element: ${arr.first()}")
-    println("last element: ${arr.last()}")
-
-    println("set element: update index 3 by the value 333")
-    arr.set(3,333)  // arr[3] = 333
-    println("get element: ${arr.get(3)}") // arr[3]
-
-    arr.sort()
-    println("sort element: ${arr.toList()}")
-
-    for (i in 0 until arr.size) {
-        println("arr[$i] = ${arr[i]}")
-    }
+    x[0] = 1
+    y.add(3)
+    y.add(1,5)
+    println("y: $y")
+    y.removeAt(1) // remove index
+    y.remove(3) // remove element
+    println("y: $y")
+    y.add(5)
+    y.add(6)
+    println("y: $y")
+    y.clear() // clear array list
+    println("y: $y")
 }
