@@ -1,17 +1,19 @@
 fun main() {
-    val x = arrayOf(2,4,6,8,10)
-    val y = ArrayList<Int>()
-    y.add(1);y.add(3);y.add(5);y.add(7);y.add(9)
+    // immutable
+    val list = listOf(2,4,6,8,10)
+    val map = mapOf<Int,String>()
+    val set = setOf(2,4,6,8,10)
+    println(list)
 
-    // for statement
-    for (i in x) {
-        println("for x: $i")
-    }
-    for (i in y) {
-        println("for y: $i")
-    }
+    // mutable
+    val listM = mutableListOf<Int>()
+    listM.add(1);listM.add(2);listM.add(3);listM.add(4);listM.add(5);
+    val mapM = mutableMapOf<Int,String>()
+    val setM = mutableSetOf<Int>()
 
-    // forEach expression
-    x.forEach {  println("forEach x : $it") }
-    y.forEach {  println("forEach x : $it") }
+    val arr = ArrayList<Int>()
+    arr.addAll(list) // use it to add list of elements (collection)
+    println(arr)
+    arr.addAll(2,set)
+    println(arr)
 }
