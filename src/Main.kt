@@ -1,22 +1,11 @@
 fun main() {
-//    val x:Array<Any> = arrayOf(2,"mohamed",'@',10.5,true)
-    val y = ArrayList<Any>()
-    input(y,5);output(y)
+    print("Enter a positive integer: ")
+    val x = readln().toInt()
+    println("sum = ${add(x)}")
 }
 
-
-fun input(x:ArrayList<Any>,size:Int) {
-    println("Enter the elements of array: ")
-//    for (i in x.indices) {
-//        x[i] = readln()
-//    }
-    for (i in 0..< size) {
-        x.add(readln())
-    }
+fun add(c:Int):Int {
+    return if(c != 0) c + add(c-1) // 5 + 4 + 3 + 2 + 1 => 15
+    else 0
 }
 
-fun output(x:ArrayList<Any>) {
-    for (i in x.indices) {
-        println("x[$i] = ${x[i]}")
-    }
-}
