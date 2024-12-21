@@ -1,26 +1,41 @@
 fun main() {
+    func1()
+    lambda1()
 
-   loop@while (true) {
-       try {
-           println("Enter two numbers: ")
-           val num1 = readln().toInt()
-           val num2 = readln().toInt()
-           println("$num1 / $num2 = ${num1/num2}")
-           break@loop
-       } catch (e:NumberFormatException) {
-           println("Please enter integer number.")
-           println("Try again...")
-           continue@loop
-       }
-       catch (e:ArithmeticException) {
-           println("Please do not divide number by zero.")
-           println("Try again...")
-           continue@loop
-       }
-       catch (e:Exception) {
-           println("You entered wrong value.")
-           continue@loop
-       }
-   }
+    func2("Mohamed Elbehairy")
+    lambda2("Mohamed Elbehairy")
+
+    println(func3())
+    println(lambda3())
+
+    println(func4(10,5))
+    println(lambda4(10,5))
+}
+ // one
+fun func1() {
+    println("Hello from func1.")
 }
 
+val lambda1 = { println("Hello from lambda1.") }
+
+// two
+
+fun func2(name:String) {
+    println("My name is $name.")
+}
+
+val lambda2 = {name:String -> println("My name is $name.") }
+
+// three
+fun func3():Int {
+    return (5+10)
+}
+
+val lambda3:()-> Int = {5+10}
+
+// four
+fun func4(a:Int,b:Int):Int {
+    return (a*b)
+}
+
+val lambda4:(Int,Int)-> Int = {a:Int,b:Int -> a*b}
