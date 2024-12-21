@@ -1,21 +1,15 @@
 fun main() {
-    val name = "Mohamed"
+    val arr1 = Array(1) {0}
+    val arr2 = Array(10,::myFunc)
+    val arr3 = Array(1,lambda)
 
-    println(name.reversed())
-    println(funcRevers(name))
-    println(lambdaReverse(name))
-    higherFunc(name,::funcRevers)
-    higherFunc(name,lambdaReverse)
-    higherFunc(name) {word:String-> word.reversed()}
-    higherFunc(name) {it.reversed()}
+    println(arr1.toList())
+    println(arr2.toList())
+    println(arr3.toList())
 }
 
-fun higherFunc(word:String,myFunc:(String)->String) {
-   println( myFunc(word))
+fun myFunc(a:Int):Int {
+    return a + 1
 }
 
-fun funcRevers(word:String):String {
-    return word.reversed()
-}
-
-val lambdaReverse = {word:String-> word.reversed()}
+val lambda = {a:Int -> "Hello"}
