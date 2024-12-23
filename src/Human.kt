@@ -1,16 +1,13 @@
-class Human(age:Int,name:String) {
-    private var age:Int? = null
-    private var name:String? = null
+class Human {
 
-//    constructor(p:Int){
-//        this.age = p
-//        println("age: $age")
-//    }
+    constructor(a:Int,b:Int) {
+        println("$a + $b = ${a+b}")
+    }
 
-    init {
-        this.age = age
-        this.name = name
-        println("age: $age")
-        println("name: $name")
+    constructor(a:Double,b:Int) {
+        println("$a + $b = ${a+b}")
+    }
+    constructor() {
+        println("sum = 0")
     }
 }

@@ -1,3 +1,5 @@
 fun main() {
-    Human(age = 23, name = "Mohamed Elbehairy")
+    Human(10,15)
+    Human(10.0,15)
+    Human()
 }
