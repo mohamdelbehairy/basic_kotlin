@@ -1,18 +1,24 @@
 fun main() {
     val b = B()
-    b.myAge()
+    b.myAge2()
 }
 
 
-open class A {
-    private var age:Int? = null
+open class A { // super class -> B, indirect super class c
+     var age:Int? = 10
 
     fun myAge() {
-        this.age = 10
         println("my age: ${this.age}")
     }
 }
 
-open class B: A()
+open class B: A()  { // subclass -> A, direct super class -> C
+     private var age2:Int? = 20
 
-class C: B()
+    fun myAge2() {
+        println("age: ${super.age}")
+        println("age2: ${this.age2}")
+    }
+}
+
+class C: B()  // subclass -> B,A
