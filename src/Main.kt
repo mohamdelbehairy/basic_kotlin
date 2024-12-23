@@ -1,15 +1,23 @@
 fun main() {
-    val arr1 = Array(1) {0}
-    val arr2 = Array(10,::myFunc)
-    val arr3 = Array(1,lambda)
+    val h1 = Human()
+    h1.name = "Mohamed"
+    h1.gender = "Male"
+    h1.length = 174
+    println("name: "+h1.name)
+    println("gender: "+h1.gender)
+    println("length : "+h1.length)
 
-    println(arr1.toList())
-    println(arr2.toList())
-    println(arr3.toList())
+    val h2 = Human()
+    h2.name = "Tasneem"
+    h2.gender = "Female"
+    h2.length = 165
+    println("name: "+h2.name)
+    println("gender: "+h2.gender)
+    println("length : "+h2.length)
 }
 
-fun myFunc(a:Int):Int {
-    return a + 1
+class Human {
+    var name:String? = null
+    var gender:String? = null
+    var length:Int? = null
 }
-
-val lambda = {a:Int -> "Hello"}
