@@ -1,38 +1,28 @@
 fun main() {
-    val x = Operation()
-    x.sum(3,3)
-    x.sub(3,3)
-    x.mul(3,3)
-    x.div(3,3)
+    val x = A()
+    x.name1
+//    x.name2
+//    x.name3
+    x.setName("Mohamed")
+    println("My name is ${x.getName()}")
 }
 
-
-open class Sum {
-   open fun sum(a:Int,b:Int) {
-        println("$a + $b = ${a+b}")
+open class A {
+    public val name1:String? = null
+    private var name2:String? = null
+    protected val name3:String? = null
+    fun  setName(name2:String) {
+        this.name2 = name2
     }
-}
-
-open class Sub: Sum() {
-    fun sub(a:Int,b:Int) {
-        println("$a - $b = ${a-b}")
+    fun getName():String? {
+        return this.name2
     }
+
 }
 
-open class Div: Sub() {
-    fun div(a:Int,b:Int) {
-        println("$a / $b = ${a/b}")
-    }
-}
-
-open class Mul: Div() {
-    fun mul(a:Int,b:Int) {
-        println("$a * $b = ${a*b}")
-    }
-}
-
-class Operation: Mul() {
-    override fun sum(a:Int,b:Int) {
-        println("sum: $a + $b = ${a+b}")
+class B:A() {
+    fun names() {
+        super.name1
+        super.name3
     }
 }
