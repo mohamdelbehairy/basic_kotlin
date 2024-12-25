@@ -1,1 +1,3 @@
-class Human {}
+import first.A
+
+class Human:A() {}
