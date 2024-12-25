@@ -1,40 +1,38 @@
 fun main() {
-    val b = C(15)
-//    b.myAge2()
+    val x = Operation()
+    x.sum(3,3)
+    x.sub(3,3)
+    x.mul(3,3)
+    x.div(3,3)
 }
 
 
-open class A {
-     var age:Int? = 10
-
-    init {
-        println("Hello from constructor A.")
-    }
-
-    fun myAge() {
-        println("my age: ${this.age}")
+open class Sum {
+   open fun sum(a:Int,b:Int) {
+        println("$a + $b = ${a+b}")
     }
 }
 
-open class B: A {
-     private var age2:Int? = 20
-
-    fun myAge2() {
-        println("age: ${super.age}")
-        println("age2: ${this.age2}")
-    }
-    constructor() {
-        println("Hello from constructor B.")
-
-    }
-    constructor(a:Int) {
-        println("Hello from constructor B with $a.")
-
+open class Sub: Sum() {
+    fun sub(a:Int,b:Int) {
+        println("$a - $b = ${a-b}")
     }
 }
 
-class C(n: Int) : B(n) {
-    init {
-        println("Hello from constructor C.")
+open class Div: Sub() {
+    fun div(a:Int,b:Int) {
+        println("$a / $b = ${a/b}")
+    }
+}
+
+open class Mul: Div() {
+    fun mul(a:Int,b:Int) {
+        println("$a * $b = ${a*b}")
+    }
+}
+
+class Operation: Mul() {
+    override fun sum(a:Int,b:Int) {
+        println("sum: $a + $b = ${a+b}")
     }
 }
