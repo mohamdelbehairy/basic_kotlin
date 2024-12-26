@@ -1,25 +1,29 @@
 fun main() {
-    val a = Operation()
-    a.sum(2,2)
-    a.sub(2,2)
+    A.x = 10
+    A.y = 12
+    A.sum()
+
+    B.x = 15
+    B.y = 20
+    B.sum()
 }
 
-interface Sum {
-    fun sum(a:Int,b:Int)
-}
+object A {
+    var x:Int? = null
+    var y:Int? = null
 
-interface Sub {
-    fun sub(a:Int,b:Int)
-}
-
-class Operation:Sum,Sub {
-    override fun sum(a: Int, b: Int) {
-        println("$a + $b = ${a+b}")
+    fun sum() {
+        println("$x + $y = ${x!!+y!!}")
     }
+}
 
-    override fun sub(a: Int, b: Int) {
-        println("$a - $b = ${a-b}")
+class B {
+    companion object {
+        var x:Int? = null
+        var y:Int? = null
+
+        fun sum() {
+            println("$x + $y = ${x!!+y!!}")
+        }
     }
-
-
 }
