@@ -1,14 +1,9 @@
 fun main() {
-    val  h1 = Shape()
-    val  h2 = Circle()
-    val  h3 = Rectangle()
-    val  h4 = Square()
-
-    val arr = arrayOf(h1,h2,h3,h4)
-    val list = mutableListOf(h1,h2,h3,h4)
-    for (i in list) {
-        i.printVar()
-    }
+    val a = A()
+    a.myFunc(Shape())
+    a.myFunc(Circle())
+    a.myFunc(Rectangle())
+    a.myFunc(Square())
 }
 
 
@@ -26,7 +21,7 @@ class Circle: Shape() {
 }
 
 class Rectangle: Shape() {
-    override fun printVar() {
+    fun printVara() {
         println("Rectangle")
     }
 }
@@ -34,5 +29,11 @@ class Rectangle: Shape() {
 class Square: Shape() {
     override fun printVar() {
         println("Square")
+    }
+}
+
+class A {
+    fun myFunc(a:Shape) {
+        a.printVar()
     }
 }
