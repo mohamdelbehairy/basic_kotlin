@@ -1,39 +1,19 @@
 fun main() {
-    val a = A()
-    a.myFunc(Shape())
-    a.myFunc(Circle())
-    a.myFunc(Rectangle())
-    a.myFunc(Square())
+    val c = Circle()
+    c.setName(name = "Circle")
 }
 
 
-open class Shape {
-    open fun printVar() {
-        println("Shape")
-    }
+//abstract class Shape {
+//    abstract fun setName(name:String)
+//}
+
+interface  Shape {
+    fun setName(name:String)
 }
 
-class Circle: Shape() {
-
-    override fun printVar() {
-       println("Circle")
-    }
-}
-
-class Rectangle: Shape() {
-    fun printVara() {
-        println("Rectangle")
-    }
-}
-
-class Square: Shape() {
-    override fun printVar() {
-        println("Square")
-    }
-}
-
-class A {
-    fun myFunc(a:Shape) {
-        a.printVar()
+class Circle: Shape {
+    override fun setName(name:String) {
+       println(name)
     }
 }
