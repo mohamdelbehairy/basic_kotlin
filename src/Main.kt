@@ -1,19 +1,25 @@
 fun main() {
-    val c = Circle()
-    c.setName(name = "Circle")
+    val a = Operation()
+    a.sum(2,2)
+    a.sub(2,2)
 }
 
-
-//abstract class Shape {
-//    abstract fun setName(name:String)
-//}
-
-interface  Shape {
-    fun setName(name:String)
+interface Sum {
+    fun sum(a:Int,b:Int)
 }
 
-class Circle: Shape {
-    override fun setName(name:String) {
-       println(name)
+interface Sub {
+    fun sub(a:Int,b:Int)
+}
+
+class Operation:Sum,Sub {
+    override fun sum(a: Int, b: Int) {
+        println("$a + $b = ${a+b}")
     }
+
+    override fun sub(a: Int, b: Int) {
+        println("$a - $b = ${a-b}")
+    }
+
+
 }
