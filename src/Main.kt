@@ -1,32 +1,23 @@
 fun main() {
-    val a = A(10)
-    val b = A(16).B(15)
-    a.printA()
-    b.printB()
+    val a = Hello()
+    val b = World()
+    a.start(); b.start()
 }
 
-class A(x:Int) { // outer class
-    private var x:Int? = null
-
-    fun printA() {
-        println("x = ${this.x}")
-    }
-
-    init {
-        this.x = x
-    }
-
-   inner class B(y:Int) { // inner class
-       private  var y:Int? = null
-
-        fun printB() {
-            println("y = ${this.y}")
-            x = 20
-            println("x = $x")
-            printA()
+class Hello: Thread() {
+   override fun run() {
+        for (i in 0..5) {
+            println("Hello")
+            sleep(500)
         }
-        init {
-            this.y = y
+    }
+}
+
+class World: Thread(){
+   override fun run() {
+        for (i in 0..5) {
+            println("World")
+            sleep(500)
         }
     }
 }
