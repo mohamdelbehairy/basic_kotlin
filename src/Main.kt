@@ -1,22 +1,8 @@
 fun main() {
-    val a = A()
-    a.draw()
-
-    val x = object :AA() {
-        override fun draw() {
-            println("Hi from Anonymous class.")
-        }
-    }
-
-    x.draw()
+    var x =X()
+    val y = Y()
+    x = y as X
 }
 
-class A:AA() {
-    override fun draw() {
-        println("Hi from class A.")
-    }
-}
-
-abstract class AA {
-    abstract fun draw()
-}
+class X
+class Y
