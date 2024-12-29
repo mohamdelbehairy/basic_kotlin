@@ -1,8 +1,32 @@
 fun main() {
-    var x =X()
-    val y = Y()
-    x = y as X
+    val a = A(10)
+    val b = A(16).B(15)
+    a.printA()
+    b.printB()
 }
 
-class X
-class Y
+class A(x:Int) { // outer class
+    private var x:Int? = null
+
+    fun printA() {
+        println("x = ${this.x}")
+    }
+
+    init {
+        this.x = x
+    }
+
+   inner class B(y:Int) { // inner class
+       private  var y:Int? = null
+
+        fun printB() {
+            println("y = ${this.y}")
+            x = 20
+            println("x = $x")
+            printA()
+        }
+        init {
+            this.y = y
+        }
+    }
+}
