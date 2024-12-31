@@ -2,6 +2,12 @@ fun main() {
     val a = Hello()
     val b = World()
     a.start(); b.start()
+    println(a.isAlive)
+    println(b.isAlive)
+    a.join(); b.join()
+    println(a.isAlive)
+    println(b.isAlive)
+    println("End.")
 }
 
 class Hello: Thread() {
