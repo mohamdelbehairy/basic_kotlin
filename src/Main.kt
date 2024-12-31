@@ -1,29 +1,51 @@
 fun main() {
-    val a = Hello()
-    val b = World()
-    a.start(); b.start()
-    println(a.isAlive)
-    println(b.isAlive)
-    a.join(); b.join()
-    println(a.isAlive)
-    println(b.isAlive)
-    println("End.")
+    println("north: ${DIRECTION.North}.")
+    println("south: ${DIRECTION.South}.")
+    println("east: ${DIRECTION.East}.")
+    println("west: ${DIRECTION.West}.")
+
+    println("i: ${DIRECTION.North.i}.")
+    DIRECTION.West.getDir()
+
+    DIRECTION2.North.getDir()
+    DIRECTION2.South.getDir()
+    DIRECTION2.East.getDir()
+    DIRECTION2.West.getDir()
 }
 
-class Hello: Thread() {
-   override fun run() {
-        for (i in 0..5) {
-            println("Hello")
-            sleep(500)
-        }
+enum class DIRECTION {
+    North,
+    South,
+    East,
+    West;
+
+    val i:Int? = null
+    fun getDir() {
+        println("DIRECTION.")
     }
 }
 
-class World: Thread(){
-   override fun run() {
-        for (i in 0..5) {
-            println("World")
-            sleep(500)
+enum class DIRECTION2 {
+    North {
+        override fun getDir() {
+            println("DIRECTION IS NORTH.")
         }
-    }
+    },
+    South {
+        override fun getDir() {
+            println("DIRECTION IS SOUTH.")
+        }
+    },
+    East {
+        override fun getDir() {
+            println("DIRECTION IS EAST.")
+        }
+    },
+    West {
+        override fun getDir() {
+            println("DIRECTION IS WEST.")
+        }
+    };
+
+    abstract fun getDir()
 }
