@@ -1,51 +1,12 @@
 fun main() {
-    println("north: ${DIRECTION.North}.")
-    println("south: ${DIRECTION.South}.")
-    println("east: ${DIRECTION.East}.")
-    println("west: ${DIRECTION.West}.")
-
-    println("i: ${DIRECTION.North.i}.")
-    DIRECTION.West.getDir()
-
-    DIRECTION2.North.getDir()
-    DIRECTION2.South.getDir()
-    DIRECTION2.East.getDir()
-    DIRECTION2.West.getDir()
+    val a = A<Double>()
+    a.x = 11.5
+    val b = A<Int>()
+    b.x = 10
+    println(a.x)
+    println(b.x)
 }
 
-enum class DIRECTION {
-    North,
-    South,
-    East,
-    West;
-
-    val i:Int? = null
-    fun getDir() {
-        println("DIRECTION.")
-    }
-}
-
-enum class DIRECTION2 {
-    North {
-        override fun getDir() {
-            println("DIRECTION IS NORTH.")
-        }
-    },
-    South {
-        override fun getDir() {
-            println("DIRECTION IS SOUTH.")
-        }
-    },
-    East {
-        override fun getDir() {
-            println("DIRECTION IS EAST.")
-        }
-    },
-    West {
-        override fun getDir() {
-            println("DIRECTION IS WEST.")
-        }
-    };
-
-    abstract fun getDir()
+class A<T> {
+    var x:T? = null
 }
